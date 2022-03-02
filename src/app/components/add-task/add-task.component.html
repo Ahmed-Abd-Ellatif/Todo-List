@@ -1,0 +1,20 @@
+<div class="container my-5">
+  <input
+    #taskTitle
+    type="text"
+    class="form-control mb-2 form-control-lg"
+    placeholder="Task Title"
+  />
+  <textarea
+    #taskDes
+    class="form-control mb-2 form-control-lg"
+    placeholder="Task Description"
+  ></textarea>
+  <button
+    class="btn btn-outline-primary me-1"
+    (click)="saveTask(taskTitle, taskDes)"
+  >
+    Save
+  </button>
+  <a routerLink="/" class="btn btn-outline-danger">Cancel</a>
+</div>

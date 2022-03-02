@@ -1,0 +1,29 @@
+<div class="container my-5">
+  <h1 class="mb-5 text-primary">Todo List App</h1>
+  <div>
+    <a routerLink="/add-task" class="btn btn-outline-danger"
+      ><i class="fa-solid fa-plus fa-xl"></i
+    ></a>
+  </div>
+  <!-- ********************************************* -->
+  <div *ngIf="tasks.length == 0" class="my-5">
+    <p class="alert alert-danger">No Tasks Yet...</p>
+  </div>
+  <!-- ********************************************* -->
+  <div *ngIf="tasks.length != 0" class="my-5">
+    <!-- ******************************************* -->
+    <ul class="list-group">
+      <li class="list-group-item" *ngFor="let task of tasks; let i = index">
+        {{ task.title }}
+
+        <span class="float-end">
+          <i
+            class="fa-solid fa-pen fa-xl me-3"
+            [routerLink]="['/task/' + i]"
+          ></i>
+          <i class="fa-solid fa-trash-can fa-xl" (click)="deleteTask(i)"></i>
+        </span>
+      </li>
+    </ul>
+  </div>
+</div>
